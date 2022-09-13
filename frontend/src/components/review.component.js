@@ -5,6 +5,7 @@ export default class Review extends Component {
   constructor(props) {
     super(props);
     this.onChangeModule = this.onChangeModule.bind(this);
+    this.onChangeAY = this.onChangeAY.bind(this);
     this.onChangeSemester = this.onChangeSemester.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeExpected = this.onChangeExpected.bind(this);
@@ -19,6 +20,7 @@ export default class Review extends Component {
       currentReview: {
         id: null,
         module: "",
+        ay:"",
         semester: "",
         description: "",
         expected: "",
@@ -45,6 +47,17 @@ export default class Review extends Component {
         }
       };
     });
+  }
+
+  onChangeAY(e) {
+    const ay = e.target.value;
+
+    this.setState(prevState => ({
+      currentReview: {
+        ...prevState.currentReview,
+        ay: ay
+      }
+    }));
   }
 
   onChangeSemester(e) {
@@ -175,7 +188,17 @@ export default class Review extends Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="module">Academic Year and Semester</label>
+                <label htmlFor="ay">Academic Year</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="ay"
+                  value={currentReview.ay}
+                  onChange={this.onChangeAY}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="module">Semester</label>
                 <input
                   type="text"
                   className="form-control"
@@ -215,7 +238,7 @@ export default class Review extends Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="rating">Rating out of 5:</label>
+                <label htmlFor="rating">Difficulty Rating, out of 5:</label>
                 <input
                   type="text"
                   className="form-control"

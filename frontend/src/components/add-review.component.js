@@ -5,6 +5,7 @@ export default class AddReview extends Component {
   constructor(props) {
     super(props);
     this.onChangeModule = this.onChangeModule.bind(this);
+    this.onChangeAY = this.onChangeAY.bind(this);
     this.onChangeSemester = this.onChangeSemester.bind(this)
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeExpected = this.onChangeExpected.bind(this);
@@ -17,6 +18,7 @@ export default class AddReview extends Component {
     this.state = {
       id: null,
       module: "",
+      ay: "",
       semester: "",
       description: "", 
       expected: "",
@@ -32,6 +34,12 @@ export default class AddReview extends Component {
     console.log(e);
     this.setState({
       module: e.target.value
+    });
+  }
+
+  onChangeAY(e) {
+    this.setState({
+      ay: e.target.value
     });
   }
 
@@ -74,6 +82,7 @@ export default class AddReview extends Component {
   saveReview() {
     var data = {
       module: this.state.module,
+      ay: this.state.ay,
       semester: this.state.semester,
       description: this.state.description,
       expected: this.state.expected,
@@ -87,6 +96,7 @@ export default class AddReview extends Component {
         this.setState({
           id: response.data.id,
           module: response.data.module,
+          ay: response.data.ay,
           semester: response.data.semester,
           description: response.data.description,
           expected: response.data.expected,
@@ -106,6 +116,7 @@ export default class AddReview extends Component {
     this.setState({
       id: null,
       module: "",
+      ay: "",
       semester: "",
       description: "",
       expected: "",
@@ -124,6 +135,8 @@ export default class AddReview extends Component {
           <div>
             <h4>You had submitted the review successfully!</h4>
             <p>Thank you for contributing your review, your review will help a lot of students who visited this website daily.</p>
+            <br></br>
+            <p>If you would like to edit/delete this review, record this review id down somewhere: <b>{this.state.id}</b> and add it to the end of http://localhost:8081/reviews/.</p>
             <button className="btn btn-primary" onClick={this.newReview}>
               Add more!
             </button>
@@ -144,7 +157,20 @@ export default class AddReview extends Component {
             </div>
             
             <div className="form-group">
-              <label htmlFor="semester">Academic year and semester:</label>
+              <label htmlFor="ay">Academic Year:</label>
+              <input
+                type="text"
+                className="form-control"
+                id="ay"
+                required
+                value={this.state.ay}
+                onChange={this.onChangeAY}
+                name="ay"
+              />
+            </div>
+            
+            <div className="form-group">
+              <label htmlFor="semester">Semester:</label>
               <input
                 type="text"
                 className="form-control"
@@ -196,7 +222,7 @@ export default class AddReview extends Component {
             </div>
               
             <div className="form-group">
-              <label htmlFor="rating">Rating out of 5:</label>
+              <label htmlFor="rating">Difficulty Rating, out of 5:</label>
               <input
                 type="text"
                 className="form-control"

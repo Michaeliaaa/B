@@ -12,6 +12,7 @@ exports.create = (req, res) => {
   // Create a Review
   const review = new Review({
     module: req.body.module,
+    ay: req.body.ay,
     semester: req.body.semester,
     description: req.body.description,
     expected: req.body.expected,

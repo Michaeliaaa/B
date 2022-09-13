@@ -146,7 +146,13 @@ export default class ReviewsList extends Component {
               </h3>
               <div>
                 <label>
-                  <strong>Academic Year and Semester:</strong>
+                  <strong>Academic Year:</strong>
+                </label>{" "}
+                {currentReview.ay}
+              </div>
+              <div>
+                <label>
+                  <strong>Semester:</strong>
                 </label>{" "}
                 {currentReview.semester}
               </div>
@@ -170,30 +176,13 @@ export default class ReviewsList extends Component {
               </div>
               <div>
                 <label>
-                  <strong>Rating out of 5:</strong>
+                  <strong>Difficulty Rating, out of 5:</strong>
                 </label>{" "}
                 {currentReview.rating}
               </div>
-
-              <h5>
-                <Link
-                  to={"/reviews/" + currentReview.id}
-                  className="badge badge-warning"
-                >
-                  Edit
-                </Link>
-              </h5>
             </div>
           ) : null}
         </div>
-        {reviews.length > 0 ? (
-          <button
-            className="m-3 btn btn-sm btn-danger"
-            onClick={this.removeAllReviews}
-          >
-            Remove all reviews
-          </button>
-        ): null}
       </div>
     );
   }
