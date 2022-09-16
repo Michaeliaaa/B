@@ -159,6 +159,7 @@ export default class ReviewsList extends Component {
                 <label>
                   <strong>Thoughts:</strong>
                 </label>{" "}
+                <br></br>
                 {currentReview.description}
               </div>
               <div>
