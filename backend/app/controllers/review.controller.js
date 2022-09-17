@@ -1,7 +1,7 @@
 const db = require("../models");
-const review = db.reviews;
+const Review = db.reviews;
 
-// Create and Save a new review
+// Create and save a new review
 exports.create = (req, res) => {
   // Validate request
   if (!req.body.module) {
@@ -77,7 +77,7 @@ exports.create = (req, res) => {
   }
 
   // Create a review
-  const review = new review({
+  const review = new Review({
     module: req.body.module,
     ay: req.body.ay,
     semester: req.body.semester,
@@ -107,14 +107,14 @@ exports.findAll = (req, res) => {
   const module = req.query.module;
   var condition = module ? { module: { $regex: new RegExp(module), $options: "i" } } : {};
 
-  review.find(condition)
+  Review.find(condition)
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving reviews."
+          err.message || "Some error occurred while retrieving the reviews."
       });
     });
 };
@@ -123,24 +123,24 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  review.findById(id)
+  Review.findById(id)
     .then(data => {
       if (!data)
-        res.status(404).send({ message: "review with id ${id} not found!"});
+        res.status(404).send({ message: `Review with id ${id} not found!`});
       else res.send(data);
     })
     .catch(err => {
       res
         .status(404)
-        .send({ message: `review with id ${id} not found!`});
+        .send({ message: `Review with id ${id} not found!`});
     });
 };
 
-// Update a review by the id in the request
+// Update a review with the id in the request
 exports.update = (req, res) => {
   if (!req.body) {
     return res.status(400).send({
-      message: "Data to update can not be empty!"
+      message: "Updated review cannot be empty!"
     });
   }
 
@@ -218,17 +218,17 @@ exports.update = (req, res) => {
 
   const id = req.params.id;
 
-  review.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+  Review.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
     .then(data => {
       if (!data) {
         res.status(404).send({
-          message: `review with id ${id} was not found!`
+          message: `Review with id ${id} was not found!`
         });
-      } else res.send({ message: "review was updated successfully." });
+      } else res.send({ message: `Review with id ${id} was updated successfully.`});
     })
     .catch(err => {
       res.status(404).send({
-        message: `review with id ${id} was not found!`
+        message: `Review with id ${id} was not found!`
       });
     });
 };
@@ -237,28 +237,28 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
   const id = req.params.id;
 
-  review.findByIdAndRemove(id, { useFindAndModify: false })
+  Review.findByIdAndRemove(id, { useFindAndModify: false })
     .then(data => {
       if (!data) {
         res.status(404).send({
-          message: `review with id ${id} was not found!`
+          message: `Review with id ${id} was not found!`
         });
       } else {
         res.send({
-          message: "review was deleted successfully!"
+          message: `Review with id ${id} was deleted successfully!`
         });
       }
     })
     .catch(err => {
       res.status(404).send({
-        message: `review with id ${id} was not found!`
+        message: `Review with id ${id} was not found!`
       });
     });
 };
 
 // Delete all reviews from the database.
 exports.deleteAll = (req, res) => {
-  review.deleteMany({})
+  Review.deleteMany({})
     .then(data => {
       res.send({
         message: `All reviews were deleted successfully!`

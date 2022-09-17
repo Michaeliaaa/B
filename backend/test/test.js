@@ -185,7 +185,7 @@ describe("Reviews", () => {
                             res.should.have.status(200);
                             res.body.should.be.a('object');
                             res.body.should.have.property('message');
-                            res.body.message.should.be.eql(`Review was updated successfully.`);
+                            res.body.message.should.be.eql(`Review with id ${valid_id} was updated successfully.`);
                         })
                 });
             done();
@@ -288,7 +288,7 @@ describe("Reviews", () => {
                             res.should.have.status(200);
                             res.body.should.be.a('object');
                             res.body.should.have.property('message');
-                            res.body.message.should.be.eql(`Review was deleted successfully!`);
+                            res.body.message.should.be.eql(`Review with id ${valid_id} was deleted successfully!`);
                         })
                 });
             done();
