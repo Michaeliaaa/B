@@ -4,19 +4,23 @@
   "description": "A review app for NUS modules",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "test": "mocha",
+    "start": "nodemon server.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [
     "nus",
     "modules",
     "review"
-  ],  
+  ],
   "author": "Michaelia",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
     "cors": "^2.8.5",
     "express": "^4.18.1",
+    "mocha": "^10.0.0",
     "mongoose": "^6.4.2"
   }
 }
