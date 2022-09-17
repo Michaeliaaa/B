@@ -1,0 +1,1944 @@
+{
+	"info": {
+		"_postman_id": "2ef692ba-e70b-4bea-8c9c-baa76f08a496",
+		"name": "Module Reviews",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23075006"
+	},
+	"item": [
+		{
+			"name": "[VALID] POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"module\": \"LAK3201\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 1\",\n    \"description\": \"This is one of the most meaningful modules I have taken in my university life. Take this module if you are interested in a deeper appreciation of Kpop or anything Korean. For me, it was was really rewarding to learn the language and simultaneously have a deeper appreciation of Kpop lyrics, instead of just listening to them blindly. For example, I did not know that some of BTS's lyrics were so motivating until I actually understood them. I definitely will try Korean 4 next semester.\",\n    \"expected\": \"B+\",\n    \"grade\": \"B\",\n    \"rating\": \"3\",\n    \"submitter\": \"ilovechocolate\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{deployedURL}}/api/reviews",
+					"host": [
+						"{{deployedURL}}"
+					],
+					"path": [
+						"api",
+						"reviews"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[INVALID] POST: Out of bound",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"module\": \"LAK3201\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 1\",\n    \"description\": \"This is one of the most meaningful modules I have taken in my university life. Take this module if you are interested in a deeper appreciation of Kpop or anything Korean. For me, it was was really rewarding to learn the language and simultaneously have a deeper appreciation of Kpop lyrics, instead of just listening to them blindly. For example, I did not know that some of BTS's lyrics were so motivating until I actually understood them. I definitely will try Korean 4 next semester.\",\n    \"expected\": \"B+\",\n    \"grade\": \"B\",\n    \"rating\": \"0\",\n    \"submitter\": \"ilovechocolate\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "54"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"36-3I7H9xrIF0TEGmdCFSUfl0envEE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 17:50:20 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Rating must be a number between 1 and 5.\"\n}"
+				},
+				{
+					"name": "[INVALID] POST: Out of bound",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"module\": \"LAK3201\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 1\",\n    \"description\": \"This is one of the most meaningful modules I have taken in my university life. Take this module if you are interested in a deeper appreciation of Kpop or anything Korean. For me, it was was really rewarding to learn the language and simultaneously have a deeper appreciation of Kpop lyrics, instead of just listening to them blindly. For example, I did not know that some of BTS's lyrics were so motivating until I actually understood them. I definitely will try Korean 4 next semester.\",\n    \"expected\": \"B+\",\n    \"grade\": \"B\",\n    \"rating\": \"6\",\n    \"submitter\": \"ilovechocolate\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "54"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"36-3I7H9xrIF0TEGmdCFSUfl0envEE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 17:51:10 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Rating must be a number between 1 and 5.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "[VALID] POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"module\": \"LSM1301\",\n    \"ay\": \"15/16\",\n    \"semester\": \"Sem 1\",\n    \"description\": \"Another easy A module. Sec 4 biology. Just be familiar with the lecture powerpoint notes. One or two days to study it is enough. There are 6 labs which are all very doable. Don't forget your lab coat kids. Go for the lectures. The first part especially; they bring live samples and it's super interesting. Only gripe is climbing up the hill to reach LT32.\",\n    \"expected\": \"A\",\n    \"grade\": \"A\",\n    \"rating\": \"5\",\n    \"submitter\": \"Chng Xinni\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{deployedURL}}/api/reviews",
+					"host": [
+						"{{deployedURL}}"
+					],
+					"path": [
+						"api",
+						"reviews"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[INVALID] POST: Wrong format",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"module\": \"LSM1301\",\n    \"ay\": \"2015/2016\",\n    \"semester\": \"Sem 1\",\n    \"description\": \"Another easy A module. Sec 4 biology. Just be familiar with the lecture powerpoint notes. One or two days to study it is enough. There are 6 labs which are all very doable. Don't forget your lab coat kids. Go for the lectures. The first part especially; they bring live samples and it's super interesting. Only gripe is climbing up the hill to reach LT32.\",\n    \"expected\": \"A\",\n    \"grade\": \"A\",\n    \"rating\": \"5\",\n    \"submitter\": \"Chng Xinni\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "70"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"46-UHI07NNgEmSxV2y3orHpfKWpDUE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 17:47:21 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Academic year must be in the format of xx/xx, e.g. 22/23\"\n}"
+				},
+				{
+					"name": "[INVALID] POST: Wrong format",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"module\": \"LSM1301\",\n    \"ay\": \"15/16\",\n    \"semester\": \"Semester 1\",\n    \"description\": \"Another easy A module. Sec 4 biology. Just be familiar with the lecture powerpoint notes. One or two days to study it is enough. There are 6 labs which are all very doable. Don't forget your lab coat kids. Go for the lectures. The first part especially; they bring live samples and it's super interesting. Only gripe is climbing up the hill to reach LT32.\",\n    \"expected\": \"A\",\n    \"grade\": \"A\",\n    \"rating\": \"5\",\n    \"submitter\": \"Chng Xinni\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "89"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"59-th0yWYCr5DpUhcAnDY3YStejUeg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 17:47:54 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid semester. It should be one of the following: Sem 1/Sem 2/ST I/ST II\"\n}"
+				},
+				{
+					"name": "[INVALID] POST: Invalid input",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"module\": \"LSM1301\",\n    \"ay\": \"15/16\",\n    \"semester\": \"Sem 1\",\n    \"description\": \"Another easy A module. Sec 4 biology. Just be familiar with the lecture powerpoint notes. One or two days to study it is enough. There are 6 labs which are all very doable. Don't forget your lab coat kids. Go for the lectures. The first part especially; they bring live samples and it's super interesting. Only gripe is climbing up the hill to reach LT32.\",\n    \"expected\": \"C-\",\n    \"grade\": \"A\",\n    \"rating\": \"5\",\n    \"submitter\": \"Chng Xinni\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "107"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"6b-FPb+e295nqNjv+8e0aWvbX1F5zU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 17:52:42 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"C- is an invalid letter grade. It should be one of the following: A+/A/A-/B+/B/B-/C+/C/D+/D/F\"\n}"
+				}
+			]
+		},
+		{
+			"name": "[VALID] POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"module\": \"CS4226\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 1\",\n    \"description\": \"If you want to take a rly light mod, this is it. A bit of math and probability at the start, so if you rly cmi probability then you might wanna take note of that (It's only important for like 1-2 topics though). Curve is pretty steep I believe. Content wise, if you are interested in knowing models for queuing and resource allocation in networks, you will find this interesting, but overall I don't think I learnt much from this module. Biggest takeaway was SDN (and the principles and motivations for it).\",\n    \"expected\": \"B+\",\n    \"grade\": \"A\",\n    \"rating\": \"2\",\n    \"submitter\": \"Saad Haider\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{deployedURL}}/api/reviews",
+					"host": [
+						"{{deployedURL}}"
+					],
+					"path": [
+						"api",
+						"reviews"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[INVALID] POST: Empty field",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"module\": \"\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 1\",\n    \"description\": \"If you want to take a rly light mod, this is it. A bit of math and probability at the start, so if you rly cmi probability then you might wanna take note of that (It's only important for like 1-2 topics though). Curve is pretty steep I believe. Content wise, if you are interested in knowing models for queuing and resource allocation in networks, you will find this interesting, but overall I don't think I learnt much from this module. Biggest takeaway was SDN (and the principles and motivations for it).\",\n    \"expected\": \"B+\",\n    \"grade\": \"A\",\n    \"rating\": \"2\",\n    \"submitter\": \"Saad Haider\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"2a-1BFEgh/nmXAN4N9UV0Y8sSY4fKU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 17:44:17 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Module code cannot be empty!\"\n}"
+				},
+				{
+					"name": "[INVALID] POST: Empty field",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"module\": \"CS4226\",\n    \"ay\": \"\",\n    \"semester\": \"Sem 1\",\n    \"description\": \"If you want to take a rly light mod, this is it. A bit of math and probability at the start, so if you rly cmi probability then you might wanna take note of that (It's only important for like 1-2 topics though). Curve is pretty steep I believe. Content wise, if you are interested in knowing models for queuing and resource allocation in networks, you will find this interesting, but overall I don't think I learnt much from this module. Biggest takeaway was SDN (and the principles and motivations for it).\",\n    \"expected\": \"B+\",\n    \"grade\": \"A\",\n    \"rating\": \"2\",\n    \"submitter\": \"Saad Haider\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"2c-PuwFpCvtcVETJ86OecKE1bR7Rdc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 17:44:46 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Academic year cannot be empty!\"\n}"
+				},
+				{
+					"name": "[INVALID] POST: Empty field",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"module\": \"CS4226\",\n    \"ay\": \"21/22\",\n    \"semester\": \"\",\n    \"description\": \"If you want to take a rly light mod, this is it. A bit of math and probability at the start, so if you rly cmi probability then you might wanna take note of that (It's only important for like 1-2 topics though). Curve is pretty steep I believe. Content wise, if you are interested in knowing models for queuing and resource allocation in networks, you will find this interesting, but overall I don't think I learnt much from this module. Biggest takeaway was SDN (and the principles and motivations for it).\",\n    \"expected\": \"B+\",\n    \"grade\": \"A\",\n    \"rating\": \"2\",\n    \"submitter\": \"Saad Haider\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"30-xhzEuwjoTMAPBMzW2LBKKg7CTTw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 17:43:31 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Academic semester cannot be empty!\"\n}"
+				},
+				{
+					"name": "[INVALID] POST: Empty field",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"module\": \"CS4226\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 1\",\n    \"description\": \"\",\n    \"expected\": \"B+\",\n    \"grade\": \"A\",\n    \"rating\": \"2\",\n    \"submitter\": \"Saad Haider\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"2a-qY+rd+rlcPgXhZe5BqrYP+tC6zA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 17:45:10 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Description cannot be empty!\"\n}"
+				},
+				{
+					"name": "[INVALID] POST: Empty field",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"module\": \"CS4226\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 1\",\n    \"description\": \"If you want to take a rly light mod, this is it. A bit of math and probability at the start, so if you rly cmi probability then you might wanna take note of that (It's only important for like 1-2 topics though). Curve is pretty steep I believe. Content wise, if you are interested in knowing models for queuing and resource allocation in networks, you will find this interesting, but overall I don't think I learnt much from this module. Biggest takeaway was SDN (and the principles and motivations for it).\",\n    \"expected\": \"\",\n    \"grade\": \"A\",\n    \"rating\": \"2\",\n    \"submitter\": \"Saad Haider\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"2d-qIbQL8cLgpFCcmrH4/xTaY1G68s\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 17:45:28 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Expected grade cannot be empty!\"\n}"
+				},
+				{
+					"name": "[INVALID] POST: Empty field",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"module\": \"CS4226\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 1\",\n    \"description\": \"If you want to take a rly light mod, this is it. A bit of math and probability at the start, so if you rly cmi probability then you might wanna take note of that (It's only important for like 1-2 topics though). Curve is pretty steep I believe. Content wise, if you are interested in knowing models for queuing and resource allocation in networks, you will find this interesting, but overall I don't think I learnt much from this module. Biggest takeaway was SDN (and the principles and motivations for it).\",\n    \"expected\": \"B+\",\n    \"grade\": \"\",\n    \"rating\": \"2\",\n    \"submitter\": \"Saad Haider\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"2b-ddujIm9EdrqIR3i4va4SQ8FVkLE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 17:45:54 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Actual grade cannot be empty!\"\n}"
+				},
+				{
+					"name": "[INVALID] POST: Empty field",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"module\": \"CS4226\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 1\",\n    \"description\": \"If you want to take a rly light mod, this is it. A bit of math and probability at the start, so if you rly cmi probability then you might wanna take note of that (It's only important for like 1-2 topics though). Curve is pretty steep I believe. Content wise, if you are interested in knowing models for queuing and resource allocation in networks, you will find this interesting, but overall I don't think I learnt much from this module. Biggest takeaway was SDN (and the principles and motivations for it).\",\n    \"expected\": \"B+\",\n    \"grade\": \"A\",\n    \"rating\": \"\",\n    \"submitter\": \"Saad Haider\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"25-7eB8HgSka46dXVb2esyrtUiSkrY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 17:46:05 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Rating cannot be empty!\"\n}"
+				},
+				{
+					"name": "[INVALID] POST: Empty field",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"module\": \"CS4226\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 1\",\n    \"description\": \"If you want to take a rly light mod, this is it. A bit of math and probability at the start, so if you rly cmi probability then you might wanna take note of that (It's only important for like 1-2 topics though). Curve is pretty steep I believe. Content wise, if you are interested in knowing models for queuing and resource allocation in networks, you will find this interesting, but overall I don't think I learnt much from this module. Biggest takeaway was SDN (and the principles and motivations for it).\",\n    \"expected\": \"B+\",\n    \"grade\": \"A\",\n    \"rating\": \"2\",\n    \"submitter\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"43-MgycufVK5Eq2KPhU+rqu/qI3zQA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 17:46:14 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Submitter cannot be empty! Please provide a nickname.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "[VALID] POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"module\": \"CS3240\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 2\",\n    \"description\": \"TL;DR: This module is NM2213 on steroids. Workload is very heavy. You will learn to use Figma which you must use for project. I would recommend taking, but not with other project heavy modules. No coding involved, good to have design skills.\",\n    \"expected\": \"A\",\n    \"grade\": \"A\",\n    \"rating\": \"4\",\n    \"submitter\": \"Zhan Hong\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{deployedURL}}/api/reviews",
+					"host": [
+						"{{deployedURL}}"
+					],
+					"path": [
+						"api",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[VALID] GET all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{deployedURL}}/api/reviews",
+					"host": [
+						"{{deployedURL}}"
+					],
+					"path": [
+						"api",
+						"reviews"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2574"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"a0e-2UaFnZ9aTb0gVrqOU1XlELeUr/w\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 17:56:41 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"module\": \"LAK3201\",\n        \"ay\": \"21/22\",\n        \"semester\": \"Sem 1\",\n        \"description\": \"This is one of the most meaningful modules I have taken in my university life. Take this module if you are interested in a deeper appreciation of Kpop or anything Korean. For me, it was was really rewarding to learn the language and simultaneously have a deeper appreciation of Kpop lyrics, instead of just listening to them blindly. For example, I did not know that some of BTS's lyrics were so motivating until I actually understood them. I definitely will try Korean 4 next semester.\",\n        \"expected\": \"B+\",\n        \"grade\": \"B\",\n        \"rating\": \"3\",\n        \"submitter\": \"ilovechocolate\",\n        \"createdAt\": \"2022-09-17T17:56:29.621Z\",\n        \"updatedAt\": \"2022-09-17T17:56:29.621Z\",\n        \"id\": \"63260a4dbfe5a12fb28483d3\"\n    },\n    {\n        \"module\": \"LSM1301\",\n        \"ay\": \"15/16\",\n        \"semester\": \"Sem 1\",\n        \"description\": \"Another easy A module. Sec 4 biology. Just be familiar with the lecture powerpoint notes. One or two days to study it is enough. There are 6 labs which are all very doable. Don't forget your lab coat kids. Go for the lectures. The first part especially; they bring live samples and it's super interesting. Only gripe is climbing up the hill to reach LT32.\",\n        \"expected\": \"A\",\n        \"grade\": \"A\",\n        \"rating\": \"5\",\n        \"submitter\": \"Chng Xinni\",\n        \"createdAt\": \"2022-09-17T17:56:30.115Z\",\n        \"updatedAt\": \"2022-09-17T17:56:30.115Z\",\n        \"id\": \"63260a4ebfe5a12fb28483d5\"\n    },\n    {\n        \"module\": \"CS4226\",\n        \"ay\": \"21/22\",\n        \"semester\": \"Sem 1\",\n        \"description\": \"If you want to take a rly light mod, this is it. A bit of math and probability at the start, so if you rly cmi probability then you might wanna take note of that (It's only important for like 1-2 topics though). Curve is pretty steep I believe. Content wise, if you are interested in knowing models for queuing and resource allocation in networks, you will find this interesting, but overall I don't think I learnt much from this module. Biggest takeaway was SDN (and the principles and motivations for it).\",\n        \"expected\": \"B+\",\n        \"grade\": \"A\",\n        \"rating\": \"2\",\n        \"submitter\": \"Saad Haider\",\n        \"createdAt\": \"2022-09-17T17:56:30.609Z\",\n        \"updatedAt\": \"2022-09-17T17:56:30.609Z\",\n        \"id\": \"63260a4ebfe5a12fb28483d7\"\n    },\n    {\n        \"module\": \"CS3240\",\n        \"ay\": \"21/22\",\n        \"semester\": \"Sem 2\",\n        \"description\": \"TL;DR: This module is NM2213 on steroids. Workload is very heavy. You will learn to use Figma which you must use for project. I would recommend taking, but not with other project heavy modules. No coding involved, good to have design skills.\",\n        \"expected\": \"A\",\n        \"grade\": \"A\",\n        \"rating\": \"4\",\n        \"submitter\": \"Zhan Hong\",\n        \"createdAt\": \"2022-09-17T17:56:31.191Z\",\n        \"updatedAt\": \"2022-09-17T17:56:31.191Z\",\n        \"id\": \"63260a4fbfe5a12fb28483d9\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "[VALID] GET with ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{deployedURL}}/api/reviews/63260a4fbfe5a12fb28483d9",
+					"host": [
+						"{{deployedURL}}"
+					],
+					"path": [
+						"api",
+						"reviews",
+						"63260a4fbfe5a12fb28483d9"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[VALID] GET with valid ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews/63260a4fbfe5a12fb28483d9",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews",
+								"63260a4fbfe5a12fb28483d9"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "483"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1e3-bK99zVTFxgsZlME92Uy549rYaGg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 17:58:01 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"module\": \"CS3240\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 2\",\n    \"description\": \"TL;DR: This module is NM2213 on steroids. Workload is very heavy. You will learn to use Figma which you must use for project. I would recommend taking, but not with other project heavy modules. No coding involved, good to have design skills.\",\n    \"expected\": \"A\",\n    \"grade\": \"A\",\n    \"rating\": \"4\",\n    \"submitter\": \"Zhan Hong\",\n    \"createdAt\": \"2022-09-17T17:56:31.191Z\",\n    \"updatedAt\": \"2022-09-17T17:56:31.191Z\",\n    \"id\": \"63260a4fbfe5a12fb28483d9\"\n}"
+				},
+				{
+					"name": "[INVALID] GET with invalid ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews/99999999",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews",
+								"99999999"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"30-eGtw101cAcsFQ0hX8nX+m/GOrzE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 18:05:28 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Review with id 99999999 not found!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "[VALID] PUT with ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"module\": \"CS3240\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 2\",\n    \"description\": \"TL;DR: This module is NM2213 on steroids. Workload is very heavy. You will learn to use Figma which you must use for project. I would recommend taking, but not with other project heavy modules. No coding involved, good to have design skills.\",\n    \"expected\": \"B+\",\n    \"grade\": \"B+\",\n    \"rating\": \"4\",\n    \"submitter\": \"Zhan Hong\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{deployedURL}}/api/reviews/63260a4fbfe5a12fb28483d9",
+					"host": [
+						"{{deployedURL}}"
+					],
+					"path": [
+						"api",
+						"reviews",
+						"63260a4fbfe5a12fb28483d9"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[VALID] PUT with valid ID",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"module\": \"CS3240\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 2\",\n    \"description\": \"TL;DR: This module is NM2213 on steroids. Workload is very heavy. You will learn to use Figma which you must use for project. I would recommend taking, but not with other project heavy modules. No coding involved, good to have design skills.\",\n    \"expected\": \"B+\",\n    \"grade\": \"B+\",\n    \"rating\": \"4\",\n    \"submitter\": \"Zhan Hong\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews/63260a4fbfe5a12fb28483d9",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews",
+								"63260a4fbfe5a12fb28483d9"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"4f-0F2SpMphXegjWG+u/CaROqs7OTI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 18:08:13 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Review with id 63260a4fbfe5a12fb28483d9 was updated successfully.\"\n}"
+				},
+				{
+					"name": "[INVALID] PUT with invalid ID",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"module\": \"CS3240\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 2\",\n    \"description\": \"TL;DR: This module is NM2213 on steroids. Workload is very heavy. You will learn to use Figma which you must use for project. I would recommend taking, but not with other project heavy modules. No coding involved, good to have design skills.\",\n    \"expected\": \"B+\",\n    \"grade\": \"B+\",\n    \"rating\": \"4\",\n    \"submitter\": \"Zhan Hong\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews/99999999",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews",
+								"99999999"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"34-YNljAVWb60b2Hconb1oVApIFUzI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 18:08:55 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Review with id 99999999 was not found!\"\n}"
+				},
+				{
+					"name": "[INVALID] PUT with out of bound input",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"module\": \"CS3240\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 2\",\n    \"description\": \"TL;DR: This module is NM2213 on steroids. Workload is very heavy. You will learn to use Figma which you must use for project. I would recommend taking, but not with other project heavy modules. No coding involved, good to have design skills.\",\n    \"expected\": \"B+\",\n    \"grade\": \"B+\",\n    \"rating\": \"6\",\n    \"submitter\": \"Zhan Hong\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews/63260a4fbfe5a12fb28483d9",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews",
+								"63260a4fbfe5a12fb28483d9"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "54"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"36-3I7H9xrIF0TEGmdCFSUfl0envEE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 18:09:39 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Rating must be a number between 1 and 5.\"\n}"
+				},
+				{
+					"name": "[INVALID] PUT with invalid input",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"module\": \"CS3240\",\n    \"ay\": \"21/22\",\n    \"semester\": \"Sem 2\",\n    \"description\": \"TL;DR: This module is NM2213 on steroids. Workload is very heavy. You will learn to use Figma which you must use for project. I would recommend taking, but not with other project heavy modules. No coding involved, good to have design skills.\",\n    \"expected\": \"B+\",\n    \"grade\": \"G\",\n    \"rating\": \"4\",\n    \"submitter\": \"Zhan Hong\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews/63260a4fbfe5a12fb28483d9",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews",
+								"63260a4fbfe5a12fb28483d9"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "106"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"6a-OAVdh0h6hIuGgGX3buheaCrd/PY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 18:10:25 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"G is an invalid letter grade. It should be one of the following: A+/A/A-/B+/B/B-/C+/C/D+/D/F\"\n}"
+				},
+				{
+					"name": "[INVALID] PUT with empty field",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"module\": \"CS3240\",\n    \"ay\": \"\",\n    \"semester\": \"Sem 2\",\n    \"description\": \"TL;DR: This module is NM2213 on steroids. Workload is very heavy. You will learn to use Figma which you must use for project. I would recommend taking, but not with other project heavy modules. No coding involved, good to have design skills.\",\n    \"expected\": \"B+\",\n    \"grade\": \"B+\",\n    \"rating\": \"4\",\n    \"submitter\": \"Zhan Hong\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews/63260a4fbfe5a12fb28483d9",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews",
+								"63260a4fbfe5a12fb28483d9"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"2c-PuwFpCvtcVETJ86OecKE1bR7Rdc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 18:12:29 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Academic year cannot be empty!\"\n}"
+				},
+				{
+					"name": "[INVALID] PUT with wrong format",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"module\": \"CS3240\",\n    \"ay\": \"21/2022\",\n    \"semester\": \"Sem 2\",\n    \"description\": \"TL;DR: This module is NM2213 on steroids. Workload is very heavy. You will learn to use Figma which you must use for project. I would recommend taking, but not with other project heavy modules. No coding involved, good to have design skills.\",\n    \"expected\": \"B+\",\n    \"grade\": \"B+\",\n    \"rating\": \"4\",\n    \"submitter\": \"Zhan Hong\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews/63260a4fbfe5a12fb28483d9",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews",
+								"63260a4fbfe5a12fb28483d9"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "70"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"46-UHI07NNgEmSxV2y3orHpfKWpDUE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 18:13:18 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Academic year must be in the format of xx/xx, e.g. 22/23\"\n}"
+				}
+			]
+		},
+		{
+			"name": "[VALID] DELETE with ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{deployedURL}}/api/reviews/63260a4fbfe5a12fb28483d9",
+					"host": [
+						"{{deployedURL}}"
+					],
+					"path": [
+						"api",
+						"reviews",
+						"63260a4fbfe5a12fb28483d9"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[VALID] DELETE with valid ID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews/63260a4fbfe5a12fb28483d9",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews",
+								"63260a4fbfe5a12fb28483d9"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"4f-UJ3RlVRZ9JobNwBnNMdsoE+dgsk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 18:16:52 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Review with id 63260a4fbfe5a12fb28483d9 was deleted successfully!\"\n}"
+				},
+				{
+					"name": "[INVALID] DELETE with invalid ID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{deployedURL}}/api/reviews/99999999",
+							"host": [
+								"{{deployedURL}}"
+							],
+							"path": [
+								"api",
+								"reviews",
+								"99999999"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:8081"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"34-YNljAVWb60b2Hconb1oVApIFUzI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Sep 2022 18:17:21 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Review with id 99999999 was not found!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "[VALID] DELETE all",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{deployedURL}}/api/reviews",
+					"host": [
+						"{{deployedURL}}"
+					],
+					"path": [
+						"api",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
