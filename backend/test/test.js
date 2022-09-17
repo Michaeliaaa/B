@@ -7,61 +7,72 @@ const app = require('../server');
 // Configure chai
 chai.use(chaiHttp);
 chai.should();
+
+let valid_review = {
+    module: "CS2103T",
+    ay: "20/21",
+    semester: "Sem 1",
+    description: "This module is very interesting.",
+    expected: "A+",
+    grade: "A+",
+    rating: 1,
+    submitter: "John Doe"
+}
+
+let valid_updated_review = {
+    module: "CS2103T",
+    ay: "20/21",
+    semester: "Sem 1",
+    description: "This module is very interesting.",
+    expected: "A+",
+    grade: "A+",
+    rating: 1,
+    submitter: "John Doe <3"
+}
+
+let invalid_missing_module_review = {
+    module: "",
+    ay: "20/21",
+    semester: "Sem 1",
+    description: "This module is very interesting.",
+    expected: "A+",
+    grade: "A+",
+    rating: 1,
+    submitter: "John Doe"
+}
+
+let invalid_incorrect_ay_format_review = {
+    module: "CS2103T",
+    ay: "2021",
+    semester: "Sem 1",
+    description: "This module is very interesting.",
+    expected: "A+",
+    grade: "A+",
+    rating: 1,
+    submitter: "John Doe"
+}
+
+let invalid_incorrect_grade_review = {
+    module: "CS2103T",
+    ay: "20/21",
+    semester: "Sem 1",
+    description: "This module is very interesting.",
+    expected: "A+",
+    grade: "C-",
+    rating: 1,
+    submitter: "John Doe"
+}
+
 describe("Reviews", () => {
-    let valid_review = {
-        module: "CS2103T",
-        ay: "20/21",
-        semester: "Sem 1",
-        description: "This module is very interesting.",
-        expected: "A+",
-        grade: "A+",
-        rating: 1,
-        submitter: "John Doe"
-    }
 
-    let valid_updated_review = {
-        module: "CS2103T",
-        ay: "20/21",
-        semester: "Sem 1",
-        description: "This module is very interesting.",
-        expected: "A+",
-        grade: "A+",
-        rating: 1,
-        submitter: "John Doe <3"
-    }
-
-    let invalid_missing_module_review = {
-        module: "",
-        ay: "20/21",
-        semester: "Sem 1",
-        description: "This module is very interesting.",
-        expected: "A+",
-        grade: "A+",
-        rating: 1,
-        submitter: "John Doe"
-    }
-
-    let invalid_incorrect_ay_format_review = {
-        module: "CS2103T",
-        ay: "2021",
-        semester: "Sem 1",
-        description: "This module is very interesting.",
-        expected: "A+",
-        grade: "A+",
-        rating: 1,
-        submitter: "John Doe"
-    }
-
-    let invalid_incorrect_grade_review = {
-        module: "CS2103T",
-        ay: "20/21",
-        semester: "Sem 1",
-        description: "This module is very interesting.",
-        expected: "A+",
-        grade: "C-",
-        rating: 1,
-        submitter: "John Doe"
-    }
+    it("Delete all reviews", (done) => {
+        chai.request(app)
+            .delete('/api/reviews')
+            .end((err, res) => {    
+                res.should.have.status(200);
+                done();
+            });
+    });
 
     describe("POST", () => {
         // Post valid data
