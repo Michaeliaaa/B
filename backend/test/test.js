@@ -308,17 +308,5 @@ describe("Reviews", () => {
                     done();
                 });
         });
-
-        it("[VALID DELETE] Delete all reviews", (done) => {
-        chai.request(app)
-            .delete('/api/reviews')
-            .end((err, res) => {    
-                res.should.have.status(200);
-                res.body.should.be.a('object');
-                res.body.should.have.property('message');
-                res.body.message.should.be.eql('All reviews were deleted successfully!');
-                done();
-            });
-    });
     });
 });
