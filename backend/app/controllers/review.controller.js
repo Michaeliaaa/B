@@ -1,7 +1,7 @@
 const db = require("../models");
-const Review = db.reviews;
+const review = db.reviews;
 
-// Create and Save a new Review
+// Create and Save a new review
 exports.create = (req, res) => {
   // Validate request
   if (!req.body.module) {
@@ -76,8 +76,8 @@ exports.create = (req, res) => {
     return;
   }
 
-  // Create a Review
-  const review = new Review({
+  // Create a review
+  const review = new review({
     module: req.body.module,
     ay: req.body.ay,
     semester: req.body.semester,
@@ -88,7 +88,7 @@ exports.create = (req, res) => {
     submitter: req.body.submitter,
   });
 
-  // Save Review in the database
+  // Save review in the database
   review
     .save(review)
     .then(data => {
@@ -97,17 +97,17 @@ exports.create = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Review."
+          err.message || "Some error occurred while creating the review."
       });
     });
 };
 
-// Retrieve all Reviews from the database.
+// Retrieve all reviews from the database.
 exports.findAll = (req, res) => {
   const module = req.query.module;
   var condition = module ? { module: { $regex: new RegExp(module), $options: "i" } } : {};
 
-  Review.find(condition)
+  review.find(condition)
     .then(data => {
       res.send(data);
     })
@@ -119,24 +119,24 @@ exports.findAll = (req, res) => {
     });
 };
 
-// Find a single Review with an id
+// Find a single review with an id
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Review.findById(id)
+  review.findById(id)
     .then(data => {
       if (!data)
-        res.status(404).send({ message: "Not found Review with id " + id });
+        res.status(404).send({ message: "review with id ${id} not found!"});
       else res.send(data);
     })
     .catch(err => {
       res
-        .status(500)
-        .send({ message: "Error retrieving Review with id=" + id });
+        .status(404)
+        .send({ message: `review with id ${id} not found!`});
     });
 };
 
-// Update a Review by the id in the request
+// Update a review by the id in the request
 exports.update = (req, res) => {
   if (!req.body) {
     return res.status(400).send({
@@ -218,50 +218,50 @@ exports.update = (req, res) => {
 
   const id = req.params.id;
 
-  Review.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+  review.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
     .then(data => {
       if (!data) {
         res.status(404).send({
-          message: `Review was not found!`
+          message: `review with id ${id} was not found!`
         });
-      } else res.send({ message: "Review was updated successfully." });
+      } else res.send({ message: "review was updated successfully." });
     })
     .catch(err => {
-      res.status(500).send({
-        message: "Error updating review with id=" + id
+      res.status(404).send({
+        message: `review with id ${id} was not found!`
       });
     });
 };
 
-// Delete a Review with the specified id in the request
+// Delete a review with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
 
-  Review.findByIdAndRemove(id, { useFindAndModify: false })
+  review.findByIdAndRemove(id, { useFindAndModify: false })
     .then(data => {
       if (!data) {
         res.status(404).send({
-          message: `Review not found!`
+          message: `review with id ${id} was not found!`
         });
       } else {
         res.send({
-          message: "Review was deleted successfully!"
+          message: "review was deleted successfully!"
         });
       }
     })
     .catch(err => {
-      res.status(500).send({
-        message: "Could not delete review with id=" + id
+      res.status(404).send({
+        message: `review with id ${id} was not found!`
       });
     });
 };
 
-// Delete all Reviews from the database.
+// Delete all reviews from the database.
 exports.deleteAll = (req, res) => {
-  Review.deleteMany({})
+  review.deleteMany({})
     .then(data => {
       res.send({
-        message: `${data.deletedCount} Reviews were deleted successfully!`
+        message: `All reviews were deleted successfully!`
       });
     })
     .catch(err => {
