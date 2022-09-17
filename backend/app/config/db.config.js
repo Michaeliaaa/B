@@ -1,3 +1,3 @@
 module.exports = {
-  url: "mongodb://127.0.0.1:27017/mod_review_db"
+  url: "mongodb+srv://michaelia:michaelia@cluster0.tm9sjeu.mongodb.net/?retryWrites=true&w=majority"
 };
