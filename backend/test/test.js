@@ -308,5 +308,14 @@ describe("Reviews", () => {
                     done();
                 });
         });
+
+        it("Delete all reviews", (done) => {
+            chai.request(app)
+                .delete('/api/reviews')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                });
+            done();
+        });
     });
 });
