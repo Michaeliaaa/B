@@ -7,6 +7,7 @@ import HomePage from "./components/home-page.component";
 import AddReview from "./components/add-review.component";
 import Review from "./components/review.component";
 import ReviewsList from "./components/reviews-list.component";
+import CurrencyRatesList from "./components/currencies-list.component";
 
 class App extends Component {
   render() {
@@ -27,15 +28,21 @@ class App extends Component {
                 Add Review
               </Link>
             </li>
+            <li className="nav-item">
+              <Link to={"/currencies"} className="nav-link">
+                Check Currencies Rates
+              </Link>
+            </li>
           </div>
         </nav>
 
         <div className="container mt-3">
           <Switch>
-            <Route exact path={["/"]} component={HomePage} />
-            <Route exact path={["/reviews"]} component={ReviewsList} />
+            <Route exact path={"/"} component={HomePage} />
+            <Route exact path={"/reviews"} component={ReviewsList} />
             <Route exact path="/add" component={AddReview} />
             <Route path="/reviews/:id" component={Review} />
+            <Route exact path="/currencies" component={CurrencyRatesList} />
           </Switch>
         </div>
       </div>
