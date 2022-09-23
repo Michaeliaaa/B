@@ -29,6 +29,15 @@ db.mongoose
     process.exit();
   });
 
+// let largeDataset = require("./data/data.json");
+// db.reviews.insertMany(largeDataset, function (err, docs) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("Inserted large dataset into DB");
+//   }
+// });
+
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "Hello world" });
