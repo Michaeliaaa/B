@@ -1,6 +1,5 @@
 module.exports = app => {
   const reviews = require("../controllers/review.controller.js");
-  const { getCacheData } = require("../cache/cache");
 
   var router = require("express").Router();
 
@@ -8,7 +7,7 @@ module.exports = app => {
   router.post("/", reviews.create);
 
   // Retrieve all Reviews
-  router.get("/", getCacheData, reviews.findAll);
+  router.get("/", reviews.findAll);
 
   // Retrieve a single Review with id
   router.get("/:id", reviews.findOne);

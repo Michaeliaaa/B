@@ -1,6 +1,5 @@
 const db = require("../models");
 const Review = db.reviews;
-const { setCacheData } = require('../cache/cache');
 
 // Create and save a new review
 exports.create = (req, res) => {
@@ -111,11 +110,6 @@ exports.findAll = (req, res) => {
   Review.find(condition)
     .then(data => {
       res.send(data);
-      try {
-        setCacheData(data);
-      } catch (error) {
-        console.log(`Failed to cache: ${error}`);
-      }
     })
     .catch(err => {
       res.status(500).send({
